@@ -2,25 +2,15 @@
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
   import Cool from '../../components/Author.astro'
-title: Hello world!
-publishDate: 12 Sep 2021
-name: Nate Moore
+title: Olá Mundo!
+publishDate: 13 jun 2022
+name: Lucas Ribeiro
 value: 128
-description: Just a Hello World Post!
+description: Apenas um olá mundo!
 ---
 
 <!-- <Cool name={frontmatter.name} href="https://twitter.com/n_moore" client:load /> -->
 
-This is so cool!
+Olá esse post é dedicado para apresentar o Blog, esse blog é construído em Astro e é um projeto pessoal que estou usando para entender melhor a ferramenta.
 
-Do variables work {frontmatter.value * 2}?
-
-```javascript
-// Example JavaScript
-
-const x = 7;
-function returnSeven() {
-  return x;
-}
-
-```
+Aqui você encontrará posts de diversos tipos, desde reviews de livros, à tutoriais sobre tecnologia, Divirta-se.
