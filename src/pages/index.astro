@@ -15,57 +15,94 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
 
-		<style>
-			header {
-				width: 100%;
-				height: 100%;
-				background-color: var(--theme-bg-offset);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
+<head>
+	<BaseHead {title} {description} {permalink} />
 
-			.content {
-				margin-top: 4rem;
-				margin-bottom: 8rem;
-			}
+	<style>
+		.card {
+			@apply bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl drop-shadow-xl p-8 flex flex-col gap-2;
+		}
 
-			.content :global(main > * + *) {
-				margin-top: 1rem;
-			}
+		.links-menu {
+			@apply flex items-center justify-start gap-3 w-full text-gray-200;
+		}
 
-			.intro {
-				padding-bottom: 4rem;
-				margin-bottom: 2rem;
-				border-bottom: 4px solid var(--theme-divider);
-			}
+		.tag {
+			@apply px-2 w-[30%] bg-green-600 rounded-xl text-center cursor-pointer transition-all duration-300;
+		}
+	</style>
+</head>
 
-			.intro > * {
-				margin: 0;
-			}
-
-			.latest {
-				font-size: 2.5rem;
-				font-weight: 700;
-			}
-		</style>
-	</head>
-
-	<body>
-		<BlogHeader />
-		<div class="wrapper">
-			<main class="content">
-				<section class="intro">
-					<h1 class="latest">{title}</h1>
-					<p>{description}</p>
+<body class="bg-gradient-to-r from-neutral-800 to-stone-600 selection:bg-green-900 selection:text-green-500 mt-32">
+	<BlogHeader />
+	<div class="flex container m-auto">
+		<aside class="flex flex-col w-1/3 gap-2">
+			<header class="card justify-center items-center">
+				<img src="images/perfil.png" alt="Perfil" class="w-24 h-24 rounded-full border-2 border-violet-800">
+				<span class="m-0 text-xl font-bold text-green-600">Lucas Ribeiro</span>
+				<span class="text-gray-200">Front-end Developer</span>
+			</header>
+			<section class="card flex flex-col justify-start">
+				<span class="links-menu">
+					<img src="assets/svg/map-pin.svg" alt="Icone de map pin" class="text-green-600">
+					Brasil
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/work-bag.svg" alt="My Works">
+					<a href="#" class=" transition-all duration-300 hover:text-green-500">Lenyeg</a> | <a href="https://hunter.fm"
+						class=" transition-all duration-300 hover:text-orange-500">Hunter - Fm</a>
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/github.svg" alt="Github">
+					<a href="https://github.com/lukinhas711"
+						class="transition-all duration-300 hover:text-gray-800">lukinhas711</a>
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/in.svg" alt="Linkedin">
+					<a href="https://github.com/lukinhas711" class="transition-all duration-300 hover:text-blue-800">Lucas
+						Ribeiro</a>
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/twitter.svg" alt="Twitter">
+					<a href="https://github.com/lukinhas711" class="transition-all duration-300 hover:text-blue-600">luskadev</a>
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/web.svg" alt="Site">
+					<a href="https://lucasribeiro.dev.br"
+						class="transition-all duration-300 hover:text-gray-800">lucasribeiro.dev.br</a>
+				</span>
+				<span class="links-menu">
+					<img src="assets/svg/mail.svg" alt="Email">
+					<a href="mailto:lucas.ribeiro711@gmail.com"
+						class="transition-all duration-300 hover:text-green-800">lukinhas711</a>
+				</span>
+			</section>
+			<section class="card">
+				<h2 class="text-2xl font-bold text-gray-200">Tecnologias</h2>
+				<section class="flex flex-wrap gap-2 items-center justify-center">
+					<span class="tag">Javascript</span>
+					<span class="tag">Vue</span>
+					<span class="tag">Astro</span>
+					<span class="tag">TailwindCss</span>
 				</section>
-				<section aria-label="Blog post list">
-					{allPosts.map((p) => <BlogPostPreview post={p} />)}
-				</section>
-			</main>
-		</div>
-	</body>
+			</section>
+		</aside>
+		<!-- <main class="content">
+			<section class="intro">
+				<h1 class="latest">{title}</h1>
+				<p>{description}</p>
+			</section>
+			<form action="">
+				<input type="tel" pattern="\(\d{2}\) \d{4,5}\-\d{4}" title="deu ruim, irmão!">
+				<input type="submit" name="enviar">
+			</form>
+			<section aria-label="Blog post list">
+				{allPosts.map((p) =>
+				<BlogPostPreview post={p} />)}
+			</section>
+		</main> -->
+	</div>
+</body>
+
 </html>
