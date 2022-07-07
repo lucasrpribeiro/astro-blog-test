@@ -8,18 +8,21 @@ const { content } = Astro.props;
 const { title, description, publishDate, author, heroImage, permalink, alt } = content;
 ---
 
-<html lang={content.lang || 'en'}>
-	<head>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css"/>
-		<BaseHead {title} {description} {permalink} />
-	</head>
+<html lang={content.lang || 'pt-br' }
+	class="mt-28 bg-gradient-to-r from-neutral-800 to-stone-600 h-screen text-gray-200">
 
-	<body>
-		<BlogHeader />
-		<div class="wrapper">
-			<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
-				<slot />
-			</BlogPost>
-		</div>
-	</body>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css" />
+	<BaseHead {title} {description} {permalink} />
+</head>
+
+<body>
+	<BlogHeader />
+	<div class="container m-auto bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl drop-shadow-xl p-8">
+		<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+			<slot />
+		</BlogPost>
+	</div>
+</body>
+
 </html>
