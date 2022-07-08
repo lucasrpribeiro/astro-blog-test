@@ -2,7 +2,7 @@
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
   import Cool from '../../components/Author.astro'
-title: Primeiro post do Blog, o que é o Astro?
+title: O que é o Astro?
 publishDate: 08 jul 2022
 name: Lucas Ribeiro
 value: 128

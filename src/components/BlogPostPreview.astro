@@ -6,14 +6,15 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article>
-	<header class="block">
+<article class="flex flex-col">
+	<header>
 		<p class="italic text-gray-700">{post.frontmatter.publishDate}</p>
 		<a class="block" href={post.url}>
 			<h1 class="text-2xl font-bold text-gray-900">{post.frontmatter.title}</h1>
 		</a>
 	</header>
 	<p>{post.frontmatter.description}</p>
-	<a class="transition-all duration-300 inline-block bg-sky-500 p-2 my-4 rounded hover:bg-sky-400" href={post.url}>Read
+	<a class="self-end transition-all duration-300 inline-block bg-sky-500 p-2 my-4 rounded hover:bg-sky-400"
+		href={post.url}>Read
 		more</a>
 </article>

@@ -5,7 +5,7 @@ import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import Card from '../components/Card.astro'
 
-let title = 'Postagens recentes';
+let title = 'Lucas RIbeiro';
 let description = 'Um blog criado com o intuito de treinar algumas tecnologias que acabou virando um espaço para escrever meus reviews e tutoriais.';
 let permalink = 'https://lucasribeiro.dev.br/';
 
@@ -102,7 +102,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 		</aside>
 		<main class="content w-full px-8">
 			<header class="card mb-4">
-				<h1 class="text-2xl font-bold text-gray-800">{title}</h1>
+				<h1 class="text-2xl font-bold text-gray-800">Postagens recentes</h1>
 			</header>
 			<section class="card p-8 text-gray-800" aria-label="Blog post list">
 				{allPosts.map((p) =>
